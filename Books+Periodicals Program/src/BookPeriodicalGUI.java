@@ -1,5 +1,6 @@
 import javax.swing.*;
 import BreezySwing.*;
+import java.util.*;
 
 public class BookPeriodicalGUI extends GBFrame {
 	
@@ -10,6 +11,18 @@ public class BookPeriodicalGUI extends GBFrame {
 		frm.setVisible(true);
 	}
 	
+	JButton printBooksButton = addButton("Print Books",1,1,1,1);
+	JButton printPeriodicalsButton = addButton("Print Periodicals",2,1,1,1);
 	
+	ArrayList<Item> itemslist = new ArrayList<Item>();
+	
+	public void buttonClicked(JButton button) {
+		if (button == printBooksButton) {
+			
+		}
+		if (button == printPeriodicalsButton) {
+			
+		}
+	}
 
 }

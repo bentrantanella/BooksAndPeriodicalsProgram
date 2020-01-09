@@ -1,4 +1,17 @@
 
-public class Item {
-
+abstract class Item {
+	private String title;
+	public Item(String t) {
+		title = t;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setTitle(String t) {
+		title = t;
+	}
+	
+	public abstract String print();
 }
