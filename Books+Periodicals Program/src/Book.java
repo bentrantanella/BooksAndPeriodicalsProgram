@@ -15,6 +15,16 @@ public class Book extends Item implements Comparable{
 	}
 	
 	public String print() {
-		return "Title: " + getTitle() + "\n" + "Author: " + author + "\n";
+		return "Title: " + getTitle() + "\n" + "Author: " + author + "\n" + "\n";
+	}
+	
+	public int compare(Item a) throws InvalidOperation{
+		if (a instanceof Periodical) {
+			throw new InvalidOperation("Cannot compare a book to a periodical");
+		}
+		
+		Book b = (Book) a;
+		
+		return author.compareTo(b.getAuthor());
 	}
 }

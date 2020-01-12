@@ -15,7 +15,18 @@ public class Periodical extends Item implements Comparable{
 	}
 	
 	public String print() {
-		return "Title: " + getTitle() + "\n" + "Issue number: " + issnum;
+		return "Title: " + getTitle() + "\n" + "Issue number: " + issnum + "\n" + "\n";
+	}
+	
+	public int compare(Item a) throws InvalidOperation{
+		if (a instanceof Book) {
+			throw new InvalidOperation("Cannot compare periodical to book");
+		}
+		
+		Periodical p = (Periodical) a;
+		
+		return issnum - p.getNum();
+		
 	}
 	
 }

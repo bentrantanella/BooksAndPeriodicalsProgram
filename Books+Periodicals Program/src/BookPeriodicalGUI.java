@@ -9,6 +9,8 @@ public class BookPeriodicalGUI extends GBFrame {
 		frm.setTitle("Books and Periodicals");
 		frm.setSize(300, 300);
 		frm.setVisible(true);
+		
+		
 	}
 	
 	JButton printBooksButton = addButton("Print Books",1,1,1,1);
