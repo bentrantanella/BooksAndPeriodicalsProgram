@@ -1,5 +1,5 @@
 
-public class Book extends Item implements Comparable{
+public class Book extends Item {
 	private String author;
 	public Book(String t, String a) {
 		super(t);
@@ -18,12 +18,23 @@ public class Book extends Item implements Comparable{
 		return "Title: " + getTitle() + "\n" + "Author: " + author + "\n" + "\n";
 	}
 	
-	public int compare(Item a) throws InvalidOperation{
-		if (a instanceof Periodical) {
-			throw new InvalidOperation("Cannot compare a book to a periodical");
+//	public int compare(Item a) throws InvalidOperation{
+//		if (a instanceof Periodical) {
+//			throw new InvalidOperation("Cannot compare a book to a periodical");
+//		}
+//		
+//		Book b = (Book) a;
+//		
+//		return author.compareTo(b.getAuthor());
+//	}
+
+	@Override
+	public int compareTo(Item o) throws ClassCastException{
+		if (o instanceof Periodical) {
+			throw new ClassCastException("Cannot compare a book to a periodical");
 		}
 		
-		Book b = (Book) a;
+		Book b = (Book) o;
 		
 		return author.compareTo(b.getAuthor());
 	}

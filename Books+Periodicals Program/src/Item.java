@@ -1,5 +1,5 @@
 
-abstract class Item {
+abstract class Item implements Comparable<Item> {
 	private String title;
 	public Item(String t) {
 		title = t;

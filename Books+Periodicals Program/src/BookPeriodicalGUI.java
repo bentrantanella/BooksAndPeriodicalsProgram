@@ -13,17 +13,27 @@ public class BookPeriodicalGUI extends GBFrame {
 		
 	}
 	
-	JButton printBooksButton = addButton("Print Books",1,1,1,1);
-	JButton printPeriodicalsButton = addButton("Print Periodicals",2,1,1,1);
+	JButton addItemButton = addButton("Add Item",1,1,1,1);
+	JButton printAllButton= addButton("Print all",2,1,1,1);
+	JButton compareButton = addButton("Compare Items",3,1,1,1);
 	
 	ArrayList<Item> itemslist = new ArrayList<Item>();
 	
 	public void buttonClicked(JButton button) {
-		if (button == printBooksButton) {
+		if (button == addItemButton) {
+			Input i = new Input(this, itemslist);
+			i.setVisible(true);
 			
 		}
-		if (button == printPeriodicalsButton) {
+		
+		if (button == printAllButton) {
+			String output = "";
 			
+			for(Item a : itemslist) {
+				output += a.print();
+			}
+			  
+			messageBox(output);
 		}
 	}
 
