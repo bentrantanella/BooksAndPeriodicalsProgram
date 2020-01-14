@@ -30,4 +30,8 @@ public class Periodical extends Item {
 		
 	}
 	
+	public String getInfo() {
+		return getTitle() + " - " + getNum();
+	}
+	
 }

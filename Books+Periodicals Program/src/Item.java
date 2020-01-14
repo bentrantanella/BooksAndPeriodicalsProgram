@@ -14,4 +14,6 @@ abstract class Item implements Comparable<Item> {
 	}
 	
 	public abstract String print();
+	
+	public abstract String getInfo();
 }

@@ -28,4 +28,8 @@ public class Book extends Item {
 		
 		return author.compareTo(b.getAuthor());
 	}
+	
+	public String getInfo() {
+		return getTitle() + " - " + getAuthor();
+	}
 }
