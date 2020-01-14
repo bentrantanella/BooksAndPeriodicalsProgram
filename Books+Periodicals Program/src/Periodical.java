@@ -17,17 +17,6 @@ public class Periodical extends Item {
 	public String print() {
 		return "Title: " + getTitle() + "\n" + "Issue number: " + issnum + "\n" + "\n";
 	}
-	
-//	public int compare(Item a) throws InvalidOperation{
-//		if (a instanceof Book) {
-//			throw new InvalidOperation("Cannot compare periodical to book");
-//		}
-//		
-//		Periodical p = (Periodical) a;
-//		
-//		return issnum - p.getNum();
-//		
-//	}
 
 	@Override
 	public int compareTo(Item o) throws ClassCastException{

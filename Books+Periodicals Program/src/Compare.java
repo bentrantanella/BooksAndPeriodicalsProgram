@@ -13,5 +13,6 @@ public class Compare extends GBDialog{
 	}
 	
 	
+	
 
 }
