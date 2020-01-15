@@ -11,7 +11,9 @@ public class BookPeriodicalGUI extends GBFrame {
 		frm.setVisible(true);
 		
 		
+
 	}
+	
 	
 	JButton addItemButton = addButton("Add Item",1,1,1,1);
 	JButton printAllButton= addButton("Print all",2,1,1,1);
@@ -24,6 +26,7 @@ public class BookPeriodicalGUI extends GBFrame {
 			Input i = new Input(this, itemslist);
 			i.setVisible(true);
 			
+			
 		}
 		
 		if (button == printAllButton) {
@@ -34,6 +37,11 @@ public class BookPeriodicalGUI extends GBFrame {
 			}
 			  
 			messageBox(output);
+		}
+		
+		if (button == compareButton) {
+			Compare c = new Compare(this, itemslist);
+			c.setVisible(true);
 		}
 	}
 

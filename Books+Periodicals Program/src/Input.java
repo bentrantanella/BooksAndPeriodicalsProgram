@@ -29,28 +29,44 @@ public class Input extends GBDialog{
 	
 	char type = 'b';
 	
-	public void ButtonClicked(JButton button) {
+	public void buttonClicked(JButton button) {
 		if (button == bookButton) {
 			type = 'b';
 			numLabel.setVisible(false);
 			numField.setVisible(false);
+			authorLabel.setVisible(true);
+			authorField.setVisible(true);
+			
+			titleField.setText("");
+			authorField.setText("");
 			
 		}
 		
 		if (button == periodicalButton) {
 			type = 'p';
+			numLabel.setVisible(true);
+			numField.setVisible(true);
 			authorLabel.setVisible(false);
 			authorField.setVisible(false);
+			
+			titleField.setText("");
+			numField.setNumber(0);
 			
 		}
 		
 		if (button == addButton) {
+			
+			
+			
 			if (type == 'b') {
 				String title = titleField.getText();
 				String author = authorField.getText();
 				Book newbook = new Book(title, author);
 				
 				itemlist.add(newbook);
+				
+				messageBox("You have added a book titled " + title);
+				
 			} else {
 				String title = titleField.getText();
 				int num = numField.getNumber();
@@ -58,6 +74,7 @@ public class Input extends GBDialog{
 				
 				itemlist.add(newp);
 				
+				messageBox("You have added a periodical titled " + title);
 			}
 		}
 	}

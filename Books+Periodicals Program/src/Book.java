@@ -1,6 +1,7 @@
 
 public class Book extends Item {
 	private String author;
+	
 	public Book(String t, String a) {
 		super(t);
 		author = a;
