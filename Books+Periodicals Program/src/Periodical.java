@@ -26,7 +26,7 @@ public class Periodical extends Item {
 		
 		Periodical p = (Periodical) o;
 		
-		return issnum - p.getNum();
+		return p.getNum() - issnum;
 		
 	}
 	

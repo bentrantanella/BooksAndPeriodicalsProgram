@@ -59,6 +59,12 @@ public class Input extends GBDialog{
 			
 			
 			if (type == 'b') {
+				
+				if (isWhitespace(titleField.getText()) || isWhitespace(authorField.getText())) {
+					messageBox("Invalid input");
+					return;
+				}
+				
 				String title = titleField.getText();
 				String author = authorField.getText();
 				Book newbook = new Book(title, author);
@@ -68,6 +74,12 @@ public class Input extends GBDialog{
 				messageBox("You have added a book titled " + title);
 				
 			} else {
+				
+				if (isWhitespace(titleField.getText()) || numField.getNumber() < 0) {
+					messageBox("Invalid input");
+					return;
+				}
+				
 				String title = titleField.getText();
 				int num = numField.getNumber();
 				Periodical newp = new Periodical(title, num);
@@ -77,6 +89,14 @@ public class Input extends GBDialog{
 				messageBox("You have added a periodical titled " + title);
 			}
 		}
+	}
+	
+	public boolean isWhitespace(String s) {
+		for(int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) != ' ')
+				return false;
+		}
+		return true;
 	}
 
 }

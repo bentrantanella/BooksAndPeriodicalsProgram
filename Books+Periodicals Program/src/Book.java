@@ -27,7 +27,7 @@ public class Book extends Item {
 		
 		Book b = (Book) o;
 		
-		return author.compareTo(b.getAuthor());
+		return b.getAuthor().compareTo(author);
 	}
 	
 	public String getInfo() {
