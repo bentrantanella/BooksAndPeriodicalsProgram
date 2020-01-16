@@ -73,6 +73,9 @@ public class Input extends GBDialog{
 				
 				messageBox("You have added a book titled " + title);
 				
+				titleField.setText("");
+				authorField.setText("");
+				
 			} else {
 				
 				if (isWhitespace(titleField.getText()) || numField.getNumber() < 0) {
@@ -87,6 +90,9 @@ public class Input extends GBDialog{
 				itemlist.add(newp);
 				
 				messageBox("You have added a periodical titled " + title);
+				
+				titleField.setText("");
+				numField.setNumber(0);
 			}
 		}
 	}

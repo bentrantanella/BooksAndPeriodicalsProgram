@@ -9,11 +9,12 @@ public class BookPeriodicalGUI extends GBFrame {
 		frm.setTitle("Books and Periodicals");
 		frm.setSize(300, 300);
 		frm.setVisible(true);
-		
-		
 
 	}
 	
+	public BookPeriodicalGUI() {
+		compareButton.setEnabled(false);
+	}
 	
 	JButton addItemButton = addButton("Add Item",1,1,1,1);
 	JButton printAllButton= addButton("Print all",2,1,1,1);
@@ -26,7 +27,8 @@ public class BookPeriodicalGUI extends GBFrame {
 			Input i = new Input(this, itemslist);
 			i.setVisible(true);
 			
-			
+			if (itemslist.size() > 0)
+				compareButton.setEnabled(true);
 		}
 		
 		if (button == printAllButton) {
@@ -35,7 +37,8 @@ public class BookPeriodicalGUI extends GBFrame {
 			for(Item a : itemslist) {
 				output += a.print();
 			}
-			  
+			if(output.contentEquals(""))
+				output = "There are no items in the list";
 			messageBox(output);
 		}
 		

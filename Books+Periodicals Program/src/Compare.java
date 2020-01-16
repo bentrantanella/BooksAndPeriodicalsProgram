@@ -37,8 +37,6 @@ public class Compare extends GBDialog{
 				}
 			}
 			
-			System.out.println(searchedItem.getInfo());
-			
 			for(Item a : itemlist) {
 				if (a == searchedItem) 
 					continue;
@@ -70,8 +68,6 @@ public class Compare extends GBDialog{
 				}
 			}
 			
-			System.out.println(searchedItem.getInfo());
-			
 			for(Item a : itemlist) {
 				if (a == searchedItem) 
 					continue;
@@ -101,8 +97,6 @@ public class Compare extends GBDialog{
 					break;
 				}
 			}
-			
-			System.out.println(searchedItem.getInfo());
 			
 			for(Item a : itemlist) {
 				if (a == searchedItem) 
